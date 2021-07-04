@@ -2,6 +2,7 @@
 <h2>UBC Time API</h2>
 <h4>API: ubctime.herokuapp.com/api <h4>
 <h4>Front page: ubctime.com <h4>
+<h5>Please note that some information are missing especially in sections-info.<h5>
 
 <table>
     <tr>
