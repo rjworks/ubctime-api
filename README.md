@@ -1,8 +1,13 @@
 
 <h2>UBC Time API</h2>
-<h4>API: ubctime.herokuapp.com/api <h4>
-<h4>Front page: ubctime.com <h4>
-<h5>Please note that some information are missing especially in sections-info.<h5>
+<h4>API: ubctime.herokuapp.com/api </h4>
+<h4>Front page: ubctime.com </h4>
+<h4>Notes</h4>
+<ul>
+<li>Some information are missing especially in sections-info</li>
+<li>The server is hosted on Heroku, so you there is a limit on how many requests you can make</li>
+<li>Since the server is hosted on Heroku, response times are pretty slow</li>
+</ul>
 
 <table>
     <tr>
