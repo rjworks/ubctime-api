@@ -6,7 +6,7 @@
 <ul>
 <li>Some information are missing especially in sections-info</li>
 <li>The server is hosted on Heroku, so you there is a limit on how many requests you can make</li>
-<li>Since the server is hosted on Heroku, response times are pretty slow</li>
+<li>Since the server is hosted on Heroku, the response times are pretty slow</li>
 </ul>
 
 <table>
