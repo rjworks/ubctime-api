@@ -54,8 +54,8 @@
 ```http
   GET /api/${campus}/sections-info/${subject}/${courseNumber}/${section}
 ```
- ### Historic Grades
- #### Get historic grades of a given subject (thanks to UBCGrades.com)
+ ### Historic Grades (thanks to UBCGrades.com)
+ #### Get historic grades of a given subject 
 
 ```http
   GET /api/${campus}/grades/${session}/${subject}/${courseNumber}/${section}
