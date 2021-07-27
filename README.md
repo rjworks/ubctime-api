@@ -58,13 +58,13 @@
  #### Get historic grades of a given subject 
 
 ```http
-  GET /api/${campus}/grades/${session}/${subject}/${courseNumber}/${section}
+  GET /api/${campus}/grades/${session}/${subject}
 ```
 
  #### Get historic grades of a given subject and courseNumber 
 
 ```http
-  GET /api/${campus}/grades/${session}/${subject}/${courseNumber}/${section}
+  GET /api/${campus}/grades/${session}/${subject}/${courseNumber}
 ```
 
  #### Get historic grades of a given subject, courseNumber, and section 
