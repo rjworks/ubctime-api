@@ -1,37 +1,85 @@
 
-<h2>UBC Time API</h2>
-<h4>API: ubctime.herokuapp.com/api </h4>
-<h4>Front page: ubctime.com </h4>
-<h4>Notes</h4>
-<ul>
-<li>Some information are missing especially in sections-info</li>
-<li>The server is hosted on Heroku, so you there is a limit on how many requests you can make</li>
-<li>Since the server is hosted on Heroku, the response times are pretty slow</li>
-</ul>
+## API Reference
 
-<table>
-    <tr>
-        <th>GET SUBJECTS</th>
-        <th>GET COURSES</th>
-        <th>GET SECTIONS INFO</th>
-        <th>GET HISTORIC GRADES (thanks to UBCGrades.com)</th>
-    </tr>
-    <tr>
-        <td>/:campus/subjects/:subject?</td>
-        <td>/:campus/courses/:subject?/:courseNumber?</td>
-        <td>/:campus/courses/:subject?/:courseNumber?/:section?</td>
-        <td>/:campus/grades/:session/:subject/:courseNumber?/:section?</td>
-    </tr>
-    <tr>
-        <td>/ubcv/subjects/</td>
-        <td>/ubcv/courses</td>
-        <td>/ubcv/sections-info/</td>
-        <td>/ubcv/grades/2020W/cpsc/</td>
-    </tr>
-    <tr>
-        <td>/ubco/subjects/cosc</td>
-        <td>/ubco/courses/cosc/121</td>
-        <td>/ubco/sections-info/cosc/121/101</td>
-        <td>/ubco/grades/2019S/cosc/121/101</td>
-    </tr>
-  </table>
+### Subjects
+#### Get all subjects
+
+```http
+  GET /api/${campus}/subjects
+```
+#### Get a subject
+
+```http
+  GET /api/${campus}/subjects/${subject}
+```
+### Courses
+#### Get all courses
+
+```http
+  GET /api/${campus}/courses
+```
+#### Get courses of a given the subject
+
+```http
+  GET /api/${campus}/courses/${subject}
+```
+
+ #### Get the course of a given subject and course number
+
+```http
+  GET /api/${campus}/courses/${subject}/${courseNumber}
+```
+
+ ### Sectons Information
+ #### Get sections information
+
+```http
+  GET /api/${campus}/sections-info
+```
+
+ #### Get sections information of a given subject
+
+```http
+  GET /api/${campus}/sections-info/${subject}
+```
+
+ #### Get sections information of a given subject and course number
+
+```http
+  GET /api/${campus}/sections-info/${subject}/${courseNumber}
+```
+
+ #### Get section information of a given subject, course number, and section
+
+```http
+  GET /api/${campus}/sections-info/${subject}/${courseNumber}/${section}
+```
+ ### Historic Grades
+ #### Get historic grades of a given subject (thanks to UBCGrades.com)
+
+```http
+  GET /api/${campus}/grades/${session}/${subject}/${courseNumber}/${section}
+```
+
+ #### Get historic grades of a given subject and courseNumber 
+
+```http
+  GET /api/${campus}/grades/${session}/${subject}/${courseNumber}/${section}
+```
+
+ #### Get historic grades of a given subject, courseNumber, and section 
+
+```http
+  GET /api/${campus}/grades/${session}/${subject}/${courseNumber}/${section}
+```
+
+### Parameters
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `campus`      | `string` | **Required**. UBC Campus. Example: UBCO, UBCV |
+| `session`      | `string` | **Required**. Session the course was offered. Example: 2020W, 2019S, 2019W| 
+| `subject`      | `string` | **Required / Optional**. Course subject. Required for fetching historic grades, optional anywhere else. Example: COSC, CPSC, CHEM. |
+| `courseNumber`      | `string` | **Optional**. Course number. Example: 111, 121, 530A| 
+| `section`      | `string` | **Optional**. Course section. Example: 101, 001, 404A| 
+
